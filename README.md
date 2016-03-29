@@ -1,6 +1,8 @@
 # 增加用户自定义key
+
 * 发送协议
 > key|cmd|data
+
 * 接收协议
 > key|status|data
 
