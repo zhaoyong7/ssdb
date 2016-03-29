@@ -335,6 +335,9 @@ const std::vector<Bytes>* Link::recv(){
 			// packet end
 			parsed += head_len;
 			input->decr(parsed);
+			//第一个参数为用户自定义key
+			this->key = this->recv_data.at(0).String();
+			this->recv_data.erase(this->recv_data.begin());
 			return &this->recv_data;;
 		}
 		if(head[0] < '0' || head[0] > '9'){

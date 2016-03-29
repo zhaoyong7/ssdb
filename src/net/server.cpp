@@ -431,7 +431,10 @@ int NetworkServer::proc(ProcJob *job){
 			job->resp.push_back("Unknown Command: " + req->at(0).String());
 			break;
 		}
+
 		job->cmd = cmd;
+		//回复
+		job->resp.push_back(job->link->key);
 		
 		if(cmd->flags & Command::FLAG_THREAD){
 			if(cmd->flags & Command::FLAG_WRITE){

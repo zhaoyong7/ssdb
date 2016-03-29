@@ -33,6 +33,9 @@ class Link{
 		char remote_ip[INET_ADDRSTRLEN];
 		int remote_port;
 
+		//自定义key
+		std::string key;
+
 		bool auth;
 		bool ignore_key_range;
 
