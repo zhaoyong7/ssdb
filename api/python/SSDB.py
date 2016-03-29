@@ -73,7 +73,7 @@ class SSDB(object):
 		if params==None:
 			pass
 			params = []
-		params = ([cmd] + params)
+		params = (['cli'] + [cmd] + params)
 		this.send(params)
 		resp = this.recv()
 
@@ -84,6 +84,8 @@ class SSDB(object):
 		if len(resp)==0:
 			pass
 			return SSDB_Response('disconnected', 'Connection closed')
+
+		del resp[0]
 
 		# {{{ switch: cmd
 		_continue_1 = False
